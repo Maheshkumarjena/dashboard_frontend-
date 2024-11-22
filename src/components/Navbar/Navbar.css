@@ -1,0 +1,111 @@
+/* Navbar Color Scheme to match the .App.css */
+:root {
+  --dark-purple: #2d2a47; /* Dark Purple */
+  --medium-purple: #7f56d9; /* Medium Purple */
+  --darker-purple: #5b3cb4; /* Darker Purple */
+  --deep-purple: #3c365e; /* Deep Purple */
+  --light-purple: #c8bfe7; /* Light Purple */
+  --soft-purple: #9f87d5; /* Soft Purple */
+  --light-lavender: #d4b3ff; /* Light Lavender */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark-purple);
+  padding: 10px 20px;
+  color: var(--light-purple);
+  font-family: Arial, sans-serif;
+  position: relative;
+  z-index: 10;
+}
+
+.navbar__logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--light-purple);
+}
+
+.navbar__links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
+
+.navbar__links li {
+  margin-right: 20px;
+}
+
+.navbar__links a {
+  color: var(--light-purple);
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+.navbar__links a:hover {
+  color: var(--light-lavender);
+}
+
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+  justify-content: space-between;
+}
+
+.navbar__hamburger .bar {
+  width: 100%;
+  height: 4px;
+  background-color: var(--light-purple);
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .navbar__links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 20px 0;
+    background: var(--deep-purple);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 9;
+  }
+
+  .navbar__links.active {
+    display: flex;
+  }
+
+  .navbar__links li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .navbar__hamburger {
+    display: flex;
+  }
+
+  /* Animation for smooth opening and closing */
+  .navbar__links {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

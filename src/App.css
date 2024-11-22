@@ -1,38 +1,135 @@
 .App {
+  background-color: #2d2a47; /* Dark Purple */
+  height: 100vh;
+  width: 100vw;
   text-align: center;
+  margin: auto;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: start;
+  align-items: start;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  padding: 10px 20px;
+  background-color: #7f56d9; /* Medium Purple */
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: auto;
+  border-radius: 20px;
+  margin-top: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button:hover {
+  background-color: #5b3cb4; /* Darker Purple */
+}
+
+.container {
+  margin-top: 10px;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3c365e; /* Deep Purple */
+}
+
+.input-wrapper {
+  position: relative;
+  background-color: inherit;
+}
+
+.input-field {
+  background-color: transparent;
+  height: 2.5rem;
+  width: 18rem;
+  border-radius: 0.75rem;
+  color: #c8bfe7; /* Light Purple */
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-width: 2px;
+  border-color: #9f87d5; /* Soft Purple */
+  transition: border-color 0.2s ease, outline-color 0.2s ease;
+}
+
+.input-field::placeholder {
+  color: transparent;
+}
+
+.input-field:focus {
+  border-color: #d4b3ff; /* Light Lavender */
+  outline: none;
+}
+
+.input-field:focus ~ .input-label,
+.input-field:not(:placeholder-shown) ~ .input-label {
+  top: -0.75rem;
+  color: #d4b3ff; /* Light Lavender */
+  font-size: 0.875rem;
+}
+
+.input-label {
+  position: absolute;
+  cursor: text;
+  left: 0.5rem;
+  top: 0.75rem;
+  font-size: 1rem;
+  color: #9f87d5; /* Soft Purple */
+  background-color: inherit;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.upload-container {
+  width: 100vw;
+  display: flex;
+  margin: auto;
+  border-radius: 0.375rem;
+  border: 1px solid #7f56d9; /* Medium Purple */
+  background-color: #2f2a48; /* Dark Purple */
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.upload-label {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 0.5rem;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.upload-icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  fill: #d4b3ff; /* Light Lavender */
+  stroke: #7f56d9; /* Medium Purple */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.upload-text {
+  color: #c8bfe7; /* Light Purple */
+  font-weight: 500;
+}
+
+.hidden-input {
+  display: none;
+}
+
+.spanTag {
+  width: 100%;
+  margin: auto;
 }
